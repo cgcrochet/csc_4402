@@ -1,0 +1,20 @@
+CREATE TABLE Doctors (
+  Doctor_ID INTEGER NOT NULL PRIMARY KEY,
+  Name TEXT,
+  Speciality TEXT,
+  Salary INTEGER,
+  Department TEXT,
+  FOREIGN KEY (Department) REFERENCES Department (Department)
+);
+
+CREATE TABLE Department (
+	Department TEXT NOT NULL PRIMARY KEY,
+  	BuildingNumber int,
+  	Budget int
+);
+
+CREATE TABLE Offices (
+	Office_ID INTEGER NOT NULL PRIMARY KEY,
+	Doctor_ID INTEGER,
+  	FOREIGN KEY (Doctor_ID) REFERENCES Doctors (Doctor_ID)
+);
