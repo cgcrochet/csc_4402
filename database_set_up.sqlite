@@ -1,0 +1,66 @@
+CREATE TABLE Doctors (
+  Doctor_ID INTEGER NOT NULL PRIMARY KEY,
+  Name TEXT,
+  Speciality TEXT,
+  Salary INTEGER,
+  Department TEXT,
+  FOREIGN KEY (Department) REFERENCES Department (Department)
+);
+
+CREATE TABLE Department (
+	Department TEXT NOT NULL PRIMARY KEY,
+  BuildingNumber int,
+  Budget int
+);
+
+CREATE TABLE Offices (
+	Office_ID INTEGER NOT NULL PRIMARY KEY,
+	Doctor_ID INTEGER,
+  FOREIGN KEY (Doctor_ID) REFERENCES Doctors (Doctor_ID)
+);
+
+CREATE TABLE Nurses (
+  Nurse_ID INTERGER NOT NULL PRIMARY KEY,
+  Name TEXT,
+  Salary INTEGER,
+  Department TEXT,
+  FOREIGN KEY (Department) REFERENCES Department (Department)
+);
+
+CREATE TABLE Patients (
+  Patient_ID NOT NULL PRIMARY KEY,
+  Name TEXT,
+  Age INTEGER,
+  Insurer TEXT,
+  Doctor_ID INTEGER,
+  Nurse_ID INTEGER,
+  FOREIGN KEY (Doctor_ID) REFERENCES Doctors (Doctor_ID),
+  FOREIGN KEY (Nurse_ID) REFERENCES Nurses (Nurse_ID)
+);
+
+CREATE TABLE Billing (
+  Bill_ID INTEGER NOT NULL PRIMARY KEY,
+  Amount INTEGER,
+  Due_Date TEXT,
+  Paid_Date TEXT,
+  Patient_ID INTEGER,
+  FOREIGN KEY (Patient_ID) REFERENCES Patients (Patient_ID)
+);
+
+CREATE TABLE Records (
+  Record_ID INTEGER NOT NULL PRIMARY KEY,
+  Reason TEXT,
+  Medication TEXT,
+  Admission_Date TEXT,
+  Discharge_Date TEXT,
+  Doctor_ID INTEGER,
+  Patient_ID INTEGER,
+  FOREIGN KEY (Doctor_ID) REFERENCES Doctors (Doctor_ID),
+  FOREIGN KEY (Patient_ID) REFERENCES Patients (Patient_ID)
+);
+
+CREATE TABLE Rooms (
+  Room_ID INTEGER NOT NULL PRIMARY KEY,
+  Patient_ID INTEGER,
+  FOREIGN KEY (Patient_ID) REFERENCES Patients (Patient_ID)
+);
