@@ -1,0 +1,8 @@
+-- populate doctors table 
+INSERT INTO Doctors (Doctor_ID, Name, Speciality, Salary, Department)
+VALUES
+    (1, "Pierce", "General", 50000, "Surgery"),
+    (2, "Chandler", "General", 80000, "Internal"),
+    (3, "Howser", "Neurology", 500000, "Surgery"),
+    (4, "Ross", "Pediatric", 120000, "Internal"),
+    (5, "Dorian", "General", 60000, "Internal");
