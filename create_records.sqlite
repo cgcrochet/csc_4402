@@ -6,3 +6,39 @@ VALUES
     (3, "Howser", "Neurology", 500000, "Surgery"),
     (4, "Ross", "Pediatric", 120000, "Internal"),
     (5, "Dorian", "General", 60000, "Internal");
+    
+-- populate Department Table
+INSERT INTO Department (Department, BuildingNumber, Budget)
+VALUES
+	('Casuality', 100, 750000),
+	('Operation Theatre', 105, 2500000),
+	('Cardiology', 110, 875000),
+	('Pediatrics', 103, 611500),
+	('Anesthesiology', 108, 990800);
+
+-- populate Offices Table
+INSERT INTO Offices ( Office_ID, Doctor_ID)
+VALUES
+  (2120, 1),
+  (2430, 2),
+  (2670, 5),
+  (2300, 3),
+  (2023, 5);
+    
+-- populate Nurses Table
+INSERT INTO Nurses (Nurse_ID, Name, Salary, Department)
+VALUES
+  (21001, 'Grace', 85000, 'Casuality'),
+  (21010, 'Thomas', 90000, 'Cardiology'),
+  (21015, 'Kim', 120000, 'Operation Theatre'),
+  (21020, 'Jordan', 75000, 'Cardiology'),
+  (21025, 'Michael', 90000, 'Operation Theatre');
+
+-- populate Patients Table
+INSERT INTO Patients (Patient_ID, Name, Age, Insurer, Doctor_ID, Nurse_ID)
+VALUES
+  (1123, 'Chelsea', 23, 'Blue Cross Blue Shield', 1, 21001),
+  (1232, 'Loften', 45, 'Kaiser Permanente', 2, 21015),
+  (1923, 'Craig', 70, 'UnitedHealthcare', 3, 21025),
+  (1891, 'Lauren', 10, 'UnitedHealthcare', 4, 21020),
+  (1771, 'Clara', 33, 'Blue Cross Blue Shield', 1, 21025);
