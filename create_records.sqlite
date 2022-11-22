@@ -42,3 +42,21 @@ VALUES
   (1923, 'Craig', 70, 'UnitedHealthcare', 3, 21025),
   (1891, 'Lauren', 10, 'UnitedHealthcare', 4, 21020),
   (1771, 'Clara', 33, 'Blue Cross Blue Shield', 1, 21025);
+
+-- populate Billings Table
+INSERT INTO Billing (Bill_ID, Amount, Due_Date, Paid_Date, Patient_ID)
+VALUES
+  (100001, 330, '2021-07-20', '2021-07-20', 1123),
+  (102001, 150, '2022-01-28', '2022-01-10', 1923),
+  (103001, 500, '2022-11-07', '2022-10-10', 1891),
+  (104001, 250, '2021-12-30', '2021-10-30', 1923),
+  (105001, 750, '2022-10-16', '2022-10-01', 1771);
+ 
+-- populate Rooms Table 
+INSERT INTO Rooms (Room_ID, Patient_ID)
+VALUES
+  (210, 1771),
+  (201, 1923),
+  (220, 1891),
+  (230, 1232),
+  (203, 1123);
