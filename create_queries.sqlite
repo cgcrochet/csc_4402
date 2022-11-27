@@ -1,0 +1,13 @@
+-- Select queries
+select Doctor_ID, Name 
+  from 'Doctors' 
+  where Salary>65000;
+select distinct Department
+  from 'Department' natural join 'Nurses'
+  where Budget>800000;
+select Patient_ID, Name, Age
+  from 'Patients' join 'Billing' using (Patient_ID)
+  group by Age;
+select Office_ID
+  from 'Offices' inner join 'Doctors'
+  group by Office_ID;
