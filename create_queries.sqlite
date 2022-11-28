@@ -20,8 +20,11 @@ SELECT SUM(Salary) AS 'Total Spent on Nurse Salaries'
 FROM Nurses;
 
 -- find out what patients are assigned to each doctors
-SELECT Patients.Name as 'Patient Name', Doctors.Name AS 'Doctor Name'
-FROM Patients, Doctors
-WHERE Doctors.Doctor_ID == Patients.Doctor_ID;
+SELECT *
+FROM Patients INNER JOIN Doctors
+ON Doctors.Doctor_ID = Patients.Doctor_ID;
+
+-- find out how many patients are assign to each doctor to determine availablility
+
 
 
