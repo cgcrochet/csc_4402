@@ -29,3 +29,14 @@ SELECT Doctors.Name, COUNT(*) AS '# of Patients', Doctors.Department
 FROM Patients INNER JOIN Doctors
 ON Doctors.Doctor_ID = Patients.Doctor_ID
 GROUP BY Doctors.Name;
+
+-- check for empty rooms
+SELECT *
+FROM Rooms
+WHERE Patient_ID IS NULL;
+
+-- see which patients are in which rooms
+SELECT Rooms.Room_ID AS 'Room Number', Patients.Name AS 'Patient'
+FROM Rooms INNER JOIN Patients
+ON Rooms.Patient_ID = Patients.Patient_ID
+GROUP BY Rooms.Room_ID;
