@@ -25,7 +25,7 @@ FROM Patients INNER JOIN Doctors
 ON Doctors.Doctor_ID = Patients.Doctor_ID;
 
 -- find out how many patients are assign to each doctor to determine availability
-SELECT Doctors.Name, COUNT(*)
+SELECT Doctors.Name, COUNT(*) AS '# of Patients', Doctors.Department
 FROM Patients INNER JOIN Doctors
 ON Doctors.Doctor_ID = Patients.Doctor_ID
 GROUP BY Doctors.Name;
