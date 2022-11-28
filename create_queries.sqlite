@@ -28,6 +28,4 @@ ON Doctors.Doctor_ID = Patients.Doctor_ID;
 SELECT Doctors.Name, COUNT(*)
 FROM Patients INNER JOIN Doctors
 ON Doctors.Doctor_ID = Patients.Doctor_ID
-group BY Doctors.Name;
-
-
+GROUP BY Doctors.Name;
