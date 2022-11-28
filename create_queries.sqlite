@@ -11,3 +11,17 @@ select Patient_ID, Name, Age
 select Office_ID
   from 'Offices' inner join 'Doctors'
   group by Office_ID;
+
+-- queries for accounting department to find total spent on different occupations
+SELECT SUM(Salary) AS 'Total Spent on Doctor Salaries'
+FROM Doctors;
+
+SELECT SUM(Salary) AS 'Total Spent on Nurse Salaries'
+FROM Nurses;
+
+-- find out what patients are assigned to each doctors
+SELECT Patients.Name as 'Patient Name', Doctors.Name AS 'Doctor Name'
+FROM Patients, Doctors
+WHERE Doctors.Doctor_ID == Patients.Doctor_ID;
+
+
