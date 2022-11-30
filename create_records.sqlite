@@ -51,8 +51,17 @@ VALUES
   (103001, 500, '2022-11-07', '2022-10-10', 1891),
   (104001, 250, '2021-12-30', '2021-10-30', 1923),
   (105001, 750, '2022-10-16', '2022-10-01', 1771);
- 
--- populate Rooms Table
+
+ -- populate Records Table
+INSERT INTO Records (Record_Id, Reason, Medication, Admission_Date, Discharge_Date, Doctor_ID, Patient_ID)
+  VALUES 
+  (411, 'Common Cold', 'Cetirizine', '2021-12-25', '2022-12-31', 1, 1771),
+  (412, "Alzheimer's Disease", 'Donepezil', '2022-01-10', '2022-02-13', 3, 1923),
+  (416, 'Brain Tumor', 'Temozolomide', '2021-06-27', '2021-07-20', 3, 1232),
+  (419, 'Asthma', 'Inhaler corticosteroids', '2022-10-10', '2022-10-17', 4, 1891),
+  (421, 'Headache', 'Ibuprofen', '2022-10-11', '2022-10-19', 2, 1771);
+  
+-- populate Rooms Table 
 INSERT INTO Rooms (Room_ID, Patient_ID)
 VALUES
   (210, 1771),
