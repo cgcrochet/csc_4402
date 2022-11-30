@@ -52,11 +52,15 @@ VALUES
   (104001, 250, '2021-12-30', '2021-10-30', 1923),
   (105001, 750, '2022-10-16', '2022-10-01', 1771);
  
--- populate Rooms Table 
+-- populate Rooms Table
 INSERT INTO Rooms (Room_ID, Patient_ID)
 VALUES
   (210, 1771),
   (201, 1923),
   (220, 1891),
   (230, 1232),
-  (203, 1123);
+  (203, 1123),
+  (100, NULL),
+  (101, NULL),
+  (102, NULL),
+  (103, NULL);
